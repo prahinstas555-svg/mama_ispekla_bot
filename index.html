@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мама Испекла</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-icon">🍰</div>
+      <h1 id="shopName">Мама Испекла</h1>
+      <p id="shopSub">Домашняя выпечка с любовью</p>
+    </div>
+    <div class="header-wave">
+      <svg viewBox="0 0 500 40" preserveAspectRatio="none">
+        <path d="M0,20 C150,50 350,0 500,20 L500,40 L0,40 Z" fill="#fdf8f3"/>
+      </svg>
+    </div>
+  </header>
+
+  <nav id="categories"></nav>
+
+  <main id="products"></main>
+
+  <div id="cartBar" class="hidden">
+    <div class="cart-bar-inner">
+      <span id="cartInfo">Корзина пуста</span>
+      <button id="openCart">
+        <span>Корзина</span>
+        <span class="cart-icon">🛒</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-handle"></div>
+      <h2>Ваш заказ</h2>
+      <div id="cartItems"></div>
+      <p id="cartTotal"></p>
+      <div class="form-group">
+        <label>💬 Комментарий</label>
+        <textarea id="comment" placeholder="Адрес, дата, пожелания..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>👤 Ваше имя</label>
+        <input id="customerName" placeholder="Введите имя">
+      </div>
+      <div class="form-group">
+        <label>📞 Телефон</label>
+        <input id="customerPhone" placeholder="+7 (___) ___-__-__">
+      </div>
+      <button id="sendOrder" class="btn-primary">Оформить заказ ✅</button>
+      <button id="closeCart" class="btn-secondary">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

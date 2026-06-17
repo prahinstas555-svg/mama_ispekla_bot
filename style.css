@@ -1,0 +1,474 @@
+/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #fdf8f3;
+  color: #2c1810;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+/* ===== ШАПКА ===== */
+header {
+  background: linear-gradient(135deg, #3d1f0f 0%, #6b3520 50%, #8b4513 100%);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.header-inner {
+  padding: 28px 20px 20px;
+}
+
+.logo-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #f5deb3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+  font-size: 13px;
+  color: #d4a574;
+  margin-top: 5px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.header-wave {
+  width: 100%;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.header-wave svg {
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+
+/* ===== КАТЕГОРИИ ===== */
+nav {
+  display: flex;
+  gap: 8px;
+  padding: 16px 12px 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav button {
+  white-space: nowrap;
+  border: 1.5px solid #e8d5c0;
+  background: #fff;
+  padding: 9px 18px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6b3520;
+  transition: all 0.25s ease;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 6px rgba(107,53,32,0.08);
+}
+
+nav button:hover {
+  background: #f5ede4;
+  border-color: #c4956a;
+}
+
+nav button.active {
+  background: linear-gradient(135deg, #6b3520, #8b4513);
+  color: #f5deb3;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(107,53,32,0.3);
+}
+
+/* ===== СЕТКА ТОВАРОВ ===== */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 12px 12px;
+}
+
+/* ===== КАРТОЧКА ТОВАРА ===== */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(107,53,32,0.10);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(228,196,166,0.3);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: #f0e6d8;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+.card-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: linear-gradient(135deg, #c4956a, #a0714f);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.card .info {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #2c1810;
+  line-height: 1.3;
+}
+
+.card .desc {
+  font-size: 11px;
+  color: #9a7560;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.card .price {
+  font-weight: 700;
+  font-size: 16px;
+  color: #6b3520;
+  margin-top: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.card .price::after {
+  content: ' ₽';
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Кнопка добавить */
+.card .add-btn {
+  margin-top: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6b3520, #8b4513);
+  color: #f5deb3;
+  padding: 9px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(107,53,32,0.25);
+}
+
+.card .add-btn:hover {
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+  box-shadow: 0 5px 15px rgba(107,53,32,0.35);
+}
+
+/* Счётчик количества */
+.qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  background: #fdf0e6;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.qty button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: linear-gradient(135deg, #6b3520, #8b4513);
+  color: #f5deb3;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.qty button:hover {
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+}
+
+.qty span {
+  font-weight: 700;
+  font-size: 15px;
+  color: #2c1810;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ===== ПАНЕЛЬ КОРЗИНЫ ===== */
+#cartBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(107,53,32,0.12);
+  border-top: 1px solid rgba(228,196,166,0.4);
+}
+
+.cart-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#cartInfo {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b3520;
+}
+
+#cartBar button {
+  background: linear-gradient(135deg, #6b3520, #8b4513);
+  color: #f5deb3;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(107,53,32,0.3);
+  transition: all 0.2s ease;
+}
+
+#cartBar button:hover {
+  box-shadow: 0 6px 18px rgba(107,53,32,0.4);
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО КОРЗИНЫ ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44,24,16,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1;
+  background: #fdf8f3;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 24px 24px 0 0;
+  padding: 20px 18px 30px;
+  box-shadow: 0 -8px 40px rgba(44,24,16,0.2);
+}
+
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: #d4a574;
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.modal-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #2c1810;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Строка товара в корзине */
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ecdccc;
+  font-size: 14px;
+  color: #2c1810;
+}
+
+.cart-row:last-child {
+  border-bottom: none;
+}
+
+#cartTotal {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #6b3520;
+  margin: 14px 0 18px;
+  text-align: center;
+  padding: 12px;
+  background: #f5ede4;
+  border-radius: 12px;
+}
+
+/* ===== ФОРМА В КОРЗИНЕ ===== */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9a7560;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e8d5c0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #2c1810;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #c4956a;
+  box-shadow: 0 0 0 3px rgba(196,149,106,0.15);
+}
+
+.modal-content textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* ===== КНОПКИ ===== */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #6b3520, #8b4513);
+  color: #f5deb3;
+  border: none;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 5px 18px rgba(107,53,32,0.3);
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(107,53,32,0.4);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 13px;
+  background: #f0e6d8;
+  color: #9a7560;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #e8d5c0;
+  color: #6b3520;
+}
+
+/* ===== УТИЛИТЫ ===== */
+.hidden {
+  display: none !important;
+}
+
+/* ===== СКРОЛЛБАР ===== */
+.modal-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #d4a574;
+  border-radius: 2px;
+}
