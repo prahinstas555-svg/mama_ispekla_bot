@@ -50,7 +50,7 @@ function renderProducts() {
       <div class="info">
         <h3>${p.name}</h3>
         <div class="desc">${p.description}</div>
-        <div class="price">${p.price} ${p.unit}</div>
+        <div class="price">${p.price} ₽ ${p.unit}</div>
         ${qty === 0
           ? `<button class="add-btn" onclick="addItem(${p.id})">В корзину</button>`
           : `<div class="qty">
