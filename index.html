@@ -13,20 +13,52 @@
 <header>
   <div class="header-inner">
 
-    <span class="header-deco left">🍴</span>
-    <span class="header-deco right">🥄</span>
+    <span class="header-deco left">🌺</span>
+    <span class="header-deco right">🌺</span>
 
-    <div class="logo-badge">
-      <span class="logo-subtitle-top">кондитерская-пекарня</span>
-      <div class="logo-title-row">
-        <span class="logo-icon">🧁</span>
-        <span class="logo-title" id="shopName">Мама Испекла</span>
-        <span>💙</span>
+    <!-- Логотип в рамке с уголками -->
+    <div class="logo-frame">
+      <span class="logo-frame-corner tr"></span>
+      <span class="logo-frame-corner bl"></span>
+      <div class="logo-wrap">
+        <img
+          src="logo.png"
+          alt="Мама Испекла"
+          class="logo-img"
+          id="shopName"
+        >
       </div>
-      <div class="logo-slogan" id="shopSub">с 2016 года • Симферополь</div>
+    </div>
+
+    <!-- Разделитель -->
+    <div class="logo-divider">
+      <div class="logo-divider-dot"></div>
+      <div class="logo-divider-dot"></div>
+      <div class="logo-divider-dot"></div>
+    </div>
+
+    <!-- Слоган -->
+    <div class="logo-slogan" id="shopSub">
+      Кондитерская-пекарня · с 2016 года
+    </div>
+
+    <!-- Нижний орнамент -->
+    <div class="header-bottom-ornament">
+      <div class="ornament-line">❧ ✦ ❧ ✦ ❧ ✦ ❧</div>
     </div>
 
   </div>
+
+  <!-- Цветная полоса снизу -->
+  <div class="header-stripe"></div>
+</header>
+
+  <div class="header-wave">
+    <svg viewBox="0 0 500 30" preserveAspectRatio="none">
+      <path d="M0,15 C125,30 375,0 500,15 L500,30 L0,30 Z" fill="#1a0a00"/>
+    </svg>
+  </div>
+</header>
 
   <div class="header-wave">
     <svg viewBox="0 0 500 36" preserveAspectRatio="none">
