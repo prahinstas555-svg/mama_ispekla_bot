@@ -1,4 +1,5 @@
-/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,59 +7,117 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #fdf8f3;
-  color: #2c1810;
+  font-family: 'Montserrat', -apple-system, sans-serif;
+  background-color: #d6eef0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a8d8dc' fill-opacity='0.25'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #1a3a4a;
   padding-bottom: 100px;
   min-height: 100vh;
 }
 
 /* ===== ШАПКА ===== */
 header {
-  background: linear-gradient(135deg, #3d1f0f 0%, #6b3520 50%, #8b4513 100%);
-  color: #fff;
+  background: #b8dde2;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2390c8ce' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   text-align: center;
   position: relative;
   padding-bottom: 0;
 }
 
 .header-inner {
-  padding: 28px 20px 20px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Синяя плашка логотипа */
+.logo-badge {
+  background: linear-gradient(160deg, #2a7da8 0%, #1b5f8a 60%, #154f77 100%);
+  border-radius: 22px;
+  padding: 18px 40px 16px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:
+    0 8px 32px rgba(27,95,138,0.35),
+    0 2px 8px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  position: relative;
+  border: 3px solid rgba(255,255,255,0.25);
+}
+
+.logo-subtitle-top {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 4px;
 }
 
 .logo-icon {
-  font-size: 42px;
-  margin-bottom: 8px;
-  display: block;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
+.logo-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Название рукописным шрифтом */
+.logo-title {
+  font-family: 'Caveat', cursive;
+  font-size: 40px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #f5deb3;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-header p {
-  font-size: 13px;
-  color: #d4a574;
-  margin-top: 5px;
-  font-weight: 300;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
   letter-spacing: 1px;
 }
 
+.logo-slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Декор по бокам */
+.header-deco {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.header-deco.left  { left: 12px; }
+.header-deco.right { right: 12px; }
+
+/* Волна */
 .header-wave {
   width: 100%;
   line-height: 0;
   margin-top: -1px;
 }
-
 .header-wave svg {
   width: 100%;
-  height: 40px;
+  height: 36px;
   display: block;
 }
 
@@ -66,40 +125,38 @@ header p {
 nav {
   display: flex;
   gap: 8px;
-  padding: 16px 12px 8px;
+  padding: 14px 12px 8px;
   overflow-x: auto;
   scrollbar-width: none;
 }
-
-nav::-webkit-scrollbar {
-  display: none;
-}
+nav::-webkit-scrollbar { display: none; }
 
 nav button {
   white-space: nowrap;
-  border: 1.5px solid #e8d5c0;
-  background: #fff;
-  padding: 9px 18px;
+  border: 2px solid #a8d4da;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
   border-radius: 25px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
-  color: #6b3520;
+  color: #1b5f8a;
   transition: all 0.25s ease;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 2px 6px rgba(107,53,32,0.08);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 8px rgba(27,95,138,0.1);
 }
 
 nav button:hover {
-  background: #f5ede4;
-  border-color: #c4956a;
+  background: rgba(255,255,255,0.9);
+  border-color: #2a7da8;
 }
 
 nav button.active {
-  background: linear-gradient(135deg, #6b3520, #8b4513);
-  color: #f5deb3;
+  background: linear-gradient(135deg, #2a7da8, #1b5f8a);
+  color: #fff;
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(107,53,32,0.3);
+  box-shadow: 0 4px 14px rgba(27,95,138,0.35);
 }
 
 /* ===== СЕТКА ТОВАРОВ ===== */
@@ -110,16 +167,19 @@ main {
   padding: 12px 12px;
 }
 
-/* ===== КАРТОЧКА ТОВАРА ===== */
+/* ===== КАРТОЧКА ===== */
 .card {
-  background: #fff;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(10px);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(107,53,32,0.10);
+  box-shadow:
+    0 4px 16px rgba(27,95,138,0.12),
+    0 1px 4px rgba(27,95,138,0.08);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid rgba(228,196,166,0.3);
+  border: 1.5px solid rgba(168,212,218,0.5);
 }
 
 .card:active {
@@ -127,110 +187,114 @@ main {
 }
 
 .card-img-wrap {
-  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #c8e8ed;
+  flex-shrink: 0;
 }
 
-.card img {
+.card-img-wrap img {
   width: 100%;
-  height: 140px;
+  height: 100%;
   object-fit: cover;
-  background: #f0e6d8;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.card:hover img {
+.card:hover .card-img-wrap img {
   transform: scale(1.04);
 }
 
-.card-badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: linear-gradient(135deg, #c4956a, #a0714f);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 10px;
-  letter-spacing: 0.5px;
-}
-
+/* Текст под фото */
 .card .info {
-  padding: 12px;
+  padding: 10px 12px 12px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: #2c1810;
-  line-height: 1.3;
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a3a4a;
+  line-height: 1.2;
 }
 
 .card .desc {
-  font-size: 11px;
-  color: #9a7560;
+  font-size: 10px;
+  color: #5a8a9a;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   flex: 1;
-  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.card .price {
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.price {
+  font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 16px;
-  color: #6b3520;
-  margin-top: 8px;
-  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #1b5f8a;
 }
 
-.card .price::after {
-  content: ' ₽';
-  font-size: 12px;
+.unit {
+  font-size: 10px;
+  color: #7aaab8;
   font-weight: 500;
 }
 
-/* Кнопка добавить */
+/* Кнопка В корзину */
 .card .add-btn {
-  margin-top: 10px;
+  margin-top: 8px;
   border: none;
-  background: linear-gradient(135deg, #6b3520, #8b4513);
-  color: #f5deb3;
-  padding: 9px;
+  background: linear-gradient(135deg, #2a7da8, #1b5f8a);
+  color: #fff;
+  padding: 8px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 10px rgba(107,53,32,0.25);
+  box-shadow: 0 3px 10px rgba(27,95,138,0.28);
+  width: 100%;
+  letter-spacing: 0.3px;
 }
 
 .card .add-btn:hover {
-  background: linear-gradient(135deg, #8b4513, #a0522d);
-  box-shadow: 0 5px 15px rgba(107,53,32,0.35);
+  background: linear-gradient(135deg, #3590be, #2a7da8);
+  box-shadow: 0 5px 15px rgba(27,95,138,0.38);
 }
 
-/* Счётчик количества */
+/* Счётчик */
 .qty {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
-  background: #fdf0e6;
+  margin-top: 8px;
+  background: #e8f5f8;
   border-radius: 10px;
   padding: 4px;
 }
 
 .qty button {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border: none;
-  background: linear-gradient(135deg, #6b3520, #8b4513);
-  color: #f5deb3;
+  background: linear-gradient(135deg, #2a7da8, #1b5f8a);
+  color: #fff;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
@@ -242,13 +306,13 @@ main {
 }
 
 .qty button:hover {
-  background: linear-gradient(135deg, #8b4513, #a0522d);
+  background: linear-gradient(135deg, #3590be, #2a7da8);
 }
 
 .qty span {
   font-weight: 700;
-  font-size: 15px;
-  color: #2c1810;
+  font-size: 14px;
+  color: #1a3a4a;
   min-width: 24px;
   text-align: center;
 }
@@ -259,12 +323,13 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(214,238,240,0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 12px 16px;
-  box-shadow: 0 -4px 20px rgba(107,53,32,0.12);
-  border-top: 1px solid rgba(228,196,166,0.4);
+  box-shadow: 0 -4px 20px rgba(27,95,138,0.15);
+  border-top: 2px solid rgba(168,212,218,0.6);
+  z-index: 50;
 }
 
 .cart-bar-inner {
@@ -276,33 +341,33 @@ main {
 }
 
 #cartInfo {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b3520;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1b5f8a;
 }
 
 #cartBar button {
-  background: linear-gradient(135deg, #6b3520, #8b4513);
-  color: #f5deb3;
+  background: linear-gradient(135deg, #2a7da8, #1b5f8a);
+  color: #fff;
   border: none;
   padding: 11px 22px;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 4px 14px rgba(107,53,32,0.3);
+  box-shadow: 0 4px 14px rgba(27,95,138,0.3);
   transition: all 0.2s ease;
 }
 
 #cartBar button:hover {
-  box-shadow: 0 6px 18px rgba(107,53,32,0.4);
+  box-shadow: 0 6px 18px rgba(27,95,138,0.4);
 }
 
-/* ===== МОДАЛЬНОЕ ОКНО КОРЗИНЫ ===== */
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
 .modal {
   position: fixed;
   inset: 0;
@@ -314,98 +379,96 @@ main {
 .modal-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(44,24,16,0.6);
+  background: rgba(26,58,74,0.55);
   backdrop-filter: blur(4px);
 }
 
 .modal-content {
   position: relative;
   z-index: 1;
-  background: #fdf8f3;
+  background: #eef8fa;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
   border-radius: 24px 24px 0 0;
   padding: 20px 18px 30px;
-  box-shadow: 0 -8px 40px rgba(44,24,16,0.2);
+  box-shadow: 0 -8px 40px rgba(27,95,138,0.2);
 }
 
 .modal-handle {
   width: 40px;
   height: 4px;
-  background: #d4a574;
+  background: #8ac4d0;
   border-radius: 2px;
   margin: 0 auto 20px;
 }
 
 .modal-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: #2c1810;
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: #1a3a4a;
   margin-bottom: 16px;
   text-align: center;
 }
 
-/* Строка товара в корзине */
 .cart-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #ecdccc;
-  font-size: 14px;
-  color: #2c1810;
+  border-bottom: 1px solid #c0dde4;
+  font-size: 13px;
+  color: #1a3a4a;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.cart-row:last-child {
-  border-bottom: none;
-}
+.cart-row:last-child { border-bottom: none; }
 
 #cartTotal {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 20px;
-  color: #6b3520;
+  font-size: 22px;
+  color: #1b5f8a;
   margin: 14px 0 18px;
   text-align: center;
   padding: 12px;
-  background: #f5ede4;
+  background: #d4eef4;
   border-radius: 12px;
+  border: 1.5px solid #a8d4da;
 }
 
-/* ===== ФОРМА В КОРЗИНЕ ===== */
-.form-group {
-  margin-bottom: 12px;
-}
+/* Форма */
+.form-group { margin-bottom: 12px; }
 
 .form-group label {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: #9a7560;
+  color: #5a8a9a;
   margin-bottom: 5px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .modal-content input,
 .modal-content textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1.5px solid #e8d5c0;
+  border: 1.5px solid #a8d4da;
   border-radius: 12px;
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: #fff;
-  color: #2c1810;
+  color: #1a3a4a;
   transition: border-color 0.2s ease;
   outline: none;
 }
 
 .modal-content input:focus,
 .modal-content textarea:focus {
-  border-color: #c4956a;
-  box-shadow: 0 0 0 3px rgba(196,149,106,0.15);
+  border-color: #2a7da8;
+  box-shadow: 0 0 0 3px rgba(42,125,168,0.15);
 }
 
 .modal-content textarea {
@@ -413,62 +476,66 @@ main {
   height: 80px;
 }
 
-/* ===== КНОПКИ ===== */
+/* Кнопки */
 .btn-primary {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #6b3520, #8b4513);
-  color: #f5deb3;
+  background: linear-gradient(135deg, #2a7da8, #1b5f8a);
+  color: #fff;
   border: none;
   border-radius: 14px;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 5px 18px rgba(107,53,32,0.3);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 5px 18px rgba(27,95,138,0.3);
   transition: all 0.2s ease;
   letter-spacing: 0.3px;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 24px rgba(107,53,32,0.4);
+  box-shadow: 0 8px 24px rgba(27,95,138,0.4);
 }
 
 .btn-secondary {
   width: 100%;
   padding: 13px;
-  background: #f0e6d8;
-  color: #9a7560;
+  background: #d4eef4;
+  color: #5a8a9a;
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #e8d5c0;
-  color: #6b3520;
+  background: #c0dde4;
+  color: #1b5f8a;
 }
 
 /* ===== УТИЛИТЫ ===== */
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
-/* ===== СКРОЛЛБАР ===== */
-.modal-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+.modal-content::-webkit-scrollbar { width: 4px; }
+.modal-content::-webkit-scrollbar-track { background: transparent; }
 .modal-content::-webkit-scrollbar-thumb {
-  background: #d4a574;
+  background: #8ac4d0;
   border-radius: 2px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 360px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+  .card h3        { font-size: 14px; }
+  .price          { font-size: 16px; }
+  .card .add-btn  { font-size: 10px; padding: 7px; }
+  .logo-title     { font-size: 34px; }
 }
